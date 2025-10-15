@@ -11,7 +11,7 @@ furnitureController.get('/', async (req, res) => {
 
 furnitureController.get('/:furnitureId', async (req, res) => {
     const furnitureId = req.params.furnitureId;
-    
+
     const furniture = await furnitureService.getOne(furnitureId);
 
     res.json(furniture);
@@ -19,8 +19,9 @@ furnitureController.get('/:furnitureId', async (req, res) => {
 
 furnitureController.post('/', async (req, res) => {
     const furnitureData = req.body;
+    const owerId = req.user.id;
 
-    const furniture = await furnitureService.create(furnitureData);
+    const furniture = await furnitureService.create(furnitureData, owerId);
 
     res.status(201).json(furniture);
 });
