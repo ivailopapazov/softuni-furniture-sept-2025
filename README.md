@@ -25,6 +25,9 @@
  - [x] Add user service with register method
  - [x] Install bcrypt
  - [x] Hash password on register
+ - [x] Add login endpoint and service
+ - [x] Verify login credentials
+ - [ ] Generate and return token
 
 ## Bonus
  - [ ] Build with vite
