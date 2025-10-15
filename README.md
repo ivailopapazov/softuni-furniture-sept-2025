@@ -17,7 +17,9 @@
  - [x] Add furniture controller
 
 ## Authentication and Authorization
- - [x] Create auth controller
+ - [x] Create user controller
+ - [ ] Add json parser
+ - [ ] Register user
 
 ## Bonus
  - [ ] Build with vite
