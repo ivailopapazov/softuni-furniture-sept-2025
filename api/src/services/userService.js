@@ -1,6 +1,10 @@
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 import User from "../models/User.js"
+
+console.log('process.env.JWT_SECRET');
+console.log(process.env.JWT_SECRET);
 
 export default {
     register(email, password) {
@@ -20,6 +24,17 @@ export default {
         }
 
         // Generate token
-        return user;
+        const payload = {
+            id: user.id,
+            email: user.email,
+        }
+
+        const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '2h' });
+
+        return {
+            _id: user.id,
+            email: user.email,
+            accessToken: token,
+        };
     }
 }
