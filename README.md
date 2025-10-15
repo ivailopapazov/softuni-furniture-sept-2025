@@ -12,7 +12,8 @@
 
 ## Setup REST API
  - [x] Initialize project and add .gitignore
- - [ ] Install and setup express `npm i express`
+ - [x] Install and setup express `npm i express`
+ - [x] Add cors
 
 ## Bonus
  - [ ] Build with vite
