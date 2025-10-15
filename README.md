@@ -14,6 +14,10 @@
  - [x] Initialize project and add .gitignore
  - [x] Install and setup express `npm i express`
  - [x] Add cors
+ - [x] Add furniture controller
+
+## Authentication and Authorization
+ - [x] Create auth controller
 
 ## Bonus
  - [ ] Build with vite
