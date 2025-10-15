@@ -2,6 +2,7 @@
 import querystring from 'querystring';
 import { Router } from 'express';
 import furnitureService from '../services/furnitureService.js';
+import { getErrorMessage } from '../utils/errorUtils.js';
 
 const furnitureController = Router();
 
@@ -30,15 +31,19 @@ furnitureController.post('/', async (req, res) => {
     const furnitureData = req.body;
     const owerId = req.user.id;
 
-    const furniture = await furnitureService.create(furnitureData, owerId);
+    try {
+        const furniture = await furnitureService.create(furnitureData, owerId);
 
-    res.status(201).json(furniture);
+        res.status(201).json(furniture);
+    } catch (err) {
+        res.status(400).json({ message: getErrorMessage(err) });
+    }
+
 });
 
 furnitureController.put('/:furnitureId', async (req, res) => {
     const furnitureId = req.params.furnitureId;
     const furnitureData = req.body;
-
 
     try {
         const furniture = await furnitureService.update(furnitureId, furnitureData);

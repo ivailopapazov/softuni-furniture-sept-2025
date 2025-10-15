@@ -44,7 +44,9 @@
  - [x] Delete furniture endpoint
  - [x] Filter furniture by userId
 
-## Error handling
+## Error handling 
+ - [x] Create error util for message
+ - [ ] Global error handler
 
 ## Bonus
  - [x] Use env variables `npm i dotenv`
