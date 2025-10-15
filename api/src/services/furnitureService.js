@@ -18,6 +18,10 @@ export default {
         });
     },
     update(furnitureId, furnitureData) {
-        return Furniture.findByIdAndUpdate(furnitureId, furnitureData, { runValidators: true});
+        return Furniture.findByIdAndUpdate(furnitureId, furnitureData, { runValidators: true });
+    },
+    delete(furnitureId, userId) {
+        return Furniture.findByIdAndDelete(furnitureId);
+        // return Furniture.deleteOne({ id: furnitureId, _ownerId: userId })
     }
 }
