@@ -18,8 +18,13 @@
 
 ## Authentication and Authorization
  - [x] Create user controller
- - [ ] Add json parser
- - [ ] Register user
+ - [x] Add json parser
+ - [x] Add register endpoint
+ - [x] Add and config database `npm i mongoose`
+ - [ ] Add user model
+ - [ ] Add user service with register method
+ - [ ] Install bcrypt
+ - [ ] Hash password on register
 
 ## Bonus
  - [ ] Build with vite
